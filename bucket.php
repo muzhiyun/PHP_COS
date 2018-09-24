@@ -30,7 +30,7 @@ $DOCUMENT_ROOT = $_SERVER['DOCUMENT_ROOT'];
     echo($e);
 
 }
-
+*/
 ####暂时弃用
  
  
@@ -69,14 +69,10 @@ for ($x=0;$x<$len;$x++)
 	fwrite($fp,"\r\n");
     fclose($fp);
 	echo "</b><br/>";
-	//echo $DOCUMENT_ROOT;
 }
 
-/* 
-echo ($result['Buckets'][0]['Name']);
-echo "<br/><br/><br/>"; 
 
- */
+
  
 # 列出bucket下所有object并打印
 $result = $cosClient->listObjects(array('Bucket' => $bucket));
