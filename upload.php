@@ -41,7 +41,9 @@ try {
 	/* echo "<pre>";
     print_r($result);
 	echo "<pre>"; */
-	if (gettype($result) == 'object') echo "上传成功";
+	if (gettype($result) == 'object') 
+		//echo "上传成功";
+		echo "<script>alert('上传成功!');location.href='".$_SERVER["HTTP_REFERER"]."';</script>"; 
 	else echo "上传失败，请重试";
 } catch (\Exception $e) {
     echo($e);

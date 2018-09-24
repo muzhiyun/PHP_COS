@@ -31,7 +31,7 @@ $DOCUMENT_ROOT = $_SERVER['DOCUMENT_ROOT'];
 
 }
 
- */
+####暂时弃用
  
  
  # 获取bucket地域
@@ -61,13 +61,14 @@ file_put_contents("$DOCUMENT_ROOT/tencent-cos-php/bucket.txt",'');
 echo "<br/><br/><b>bucket列表&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;位置</b><br/><br/>";
 for ($x=0;$x<$len;$x++)
 {
+	echo "<b class=\"striped\">";
 	echo ($result['Buckets'][$x]['Name']);
 	getBucketLocation($result['Buckets'][$x]['Name']);
 	$fp = fopen("$DOCUMENT_ROOT/tencent-cos-php/bucket.txt",'a');
     fwrite($fp,$result['Buckets'][$x]['Name']);
 	fwrite($fp,"\r\n");
     fclose($fp);
-	echo "<br/>";
+	echo "</b><br/>";
 	//echo $DOCUMENT_ROOT;
 }
 
@@ -83,8 +84,20 @@ $len = count($result['Contents']);
 echo "<br/><br/><b>文件列表</b><br/><br/>";
 for ($x=0;$x<$len;$x++)
 {
+	$forblank = strlen($result['Contents'][$x]['Key']);                                             //##求出文件名长度 多退少补 使后续链接对齐
 	echo ($result['Contents'][$x]['Key']);
-	echo "<br/>";
+	//echo ($forblank);
+	for($y=20-$forblank;$y>0;$y--)
+	{
+		echo "&nbsp;&nbsp;";                                                                       //##生成空格 对齐
+	}
+	echo "<a href='http://file.muzhidianzi.cn/".$result['Contents'][$x]['Key']."' download=\"test\" class=\"waves-effect waves-light btn-small\">下载</a>";                                                                     	//##CDN自定义域名
+	echo "<br/><hr>";
+	
+	
+
+	//echo "<a href="http://muzhi-1252597952.cos.ap-beijing-1.myqcloud.com/">下载</a>";           //##普通域名
+	
 }
 
 
@@ -138,6 +151,7 @@ function object_to_array($obj) {
     return $obj;
 }
  */
+ //echo "测试》》》".$result['Contents'][$x]['Key']."《《《测试结束";
 //$test= object_to_array($result);
 //echo ($test);
 //echo ($result);

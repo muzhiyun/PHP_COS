@@ -2,102 +2,67 @@
 <html lang="zh">
  
 	<head>
-<style>  
-  
-#login_click{ margin-top:32px; height:40px;}  
-#login_click a   
-{  
-      
-  
-    text-decoration:none;  
-    background:#2f435e;  
-    color:#f2f2f2;  
-      
-    padding: 10px 30px 10px 30px;  
-    font-size:16px;  
-    font-family: 微软雅黑,宋体,Arial,Helvetica,Verdana,sans-serif;  
-    font-weight:bold;  
-    border-radius:3px;  
-      
-    -webkit-transition:all linear 0.30s;  
-    -moz-transition:all linear 0.30s;  
-    transition:all linear 0.30s;  
-      
-    }  
-   #login_click a:hover { background:#385f9e; }  
-  
-</style>  
-<style class="darkreader darkreader--user-agent" media="screen">
-
-html {
-    background-color: #000000 !important;
-}
-html, body, input, textarea, select, button {
-    background-color: #000000;
-}
-html, body, input, textarea, select, button {
-    border-color: #434343;
-    color: #ffffff;
-}
-a {
-    color: #0d59ff;
-}
-table {
-    border-color: #323232;
-}
-::placeholder {
-    color: #e8d1b0;
-}
-::selection {
-    background-color: #004af2;
-    color: #ffffff;
-}
-::-moz-selection {
-    background-color: #004af2;
-    color: #ffffff;
-}
-input:-webkit-autofill,
-textarea:-webkit-autofill,
-select:-webkit-autofill {
-    background-color: #3e4900 !important;
-    color: #ffffff !important;
-}
-::-webkit-scrollbar {
-    background-color: #000000;
-    color: #f5e5c8;
-}
-::-webkit-scrollbar-thumb {
-    background-color: #00000d;
-}
-::-webkit-scrollbar-thumb:hover {
-    background-color: #020a1c;
-}
-::-webkit-scrollbar-thumb:active {
-    background-color: #111d2f;
-}
-::-webkit-scrollbar-corner {
-    background-color: #000000;
-	
-}</style>
- 
-		<meta charset="UTF-8">
-		<title>轻存储</title>
-		<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="UTF-8">
+	<title>轻存储</title>
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.js"></script>
 	</head>
 	<body>
-	<b>轻存储0.1d</b>
-	<br\><br\>
+	 <!-----
+	 <div class="card-panel teal lighten-2"><a href="/index.php">轻存储0.1.1d</div>
+	<hr> 
+	---->
+	<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo">&nbsp;&nbsp;轻存储0.1.1d</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="sass.html">登陆</a></li>
+        <li><a href="badges.html">控制台登陆</a></li>
+        <li><a href="collapsible.html">插件</a></li>
+      </ul>
+    </div>
+  </nav>
 	<?php
 	require 'bucket.php';
-	?>	
-	<button class="btn btn-primary" id="btlogin">下载</button>	
-	<p></p>
-		<form action="upload.php" enctype="multipart/form-data" method="post">
-			<input type="file" name="file" class="input">
-			<button class="btn btn-primary" type="submit">上传</button>
-		</form>
-		
-		
+	?>
+	<p>
+	</p>
+	<form action="upload.php" enctype="multipart/form-data" method="post">
+		<input type="file" name="file" class="input">
+		<button class="btn btn-primary" type="submit">上传</button>
+	</form>
+    <!----
+	<button class="btn btn-primary" id="btlogin">下载</button>
+	----->
+	<br/><br/><br/><br/><br/>
+	<br/><br/><br/><br/><br/><br/>
+	 <footer class="page-footer">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">轻存储</h5>
+                <p class="grey-text text-lighten-4">基于COS的私人云盘or图床？暂时还没想好</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+               <h5 class="white-text">PY的香气？</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">行家啊</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">尝尝我自创的拔丝煎面</a></li>
+                  <!---<li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>--->
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright">
+            <div class="container">
+            © 2018 Copyright muzhiyun
+            <a class="grey-text text-lighten-4 right" href="#!">More PY</a>
+            </div>
+          </div>
+        </footer>
+	 <script type="text/javascript" src="js/materialize.min.js"></script>
 	</body>
  
 </html>
